@@ -1,11 +1,8 @@
 export const convertTemplateToString = (template) => {
-	let result = `"${template.replace(/"/g, '\\"').replace(/[\n\t]/g, '')}"`;
-
-	if (result.includes('{{{')) {
-		result = result.replace('{{{', '{ {{');
-	}
-
-	return result;
+	return `"${template
+		.replace(/"/g, '\\"')
+		.replace(/[\n\t]/g, '')
+		.replace(/{{{/g, '{ {{')}"`;
 };
 
 export const convertStringToTemplate = (templateString) => {
