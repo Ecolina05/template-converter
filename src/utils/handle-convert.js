@@ -3,9 +3,15 @@ export const convertTemplateToString = (template) => {
 };
 
 export const convertStringToTemplate = (templateString) => {
-	return templateString
-		.replace(/\\"/g, '"') // Reemplaza \" con "
-		.replace(/\\n/g, '\n') // Reemplaza \n con un salto de línea real
-		.replace(/\\t/g, '\t') // Reemplaza \t con un tabulador real
+	let result = templateString
+		.replace(/\\"/g, '"')
+		.replace(/\\n/g, '\n')
+		.replace(/\\t/g, '\t')
 		.replace(/^"(.*)"$/, '$1');
+
+	if (result.startsWith('"') && result.endsWith('"')) {
+		result = result.slice(1, -1);
+	}
+
+	return result;
 };
