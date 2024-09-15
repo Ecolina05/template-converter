@@ -1,0 +1,47 @@
+@import './scroll.css';
+
+:root {
+  --primary-color: #007bff;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --light-color: #f8f9fa;
+  --dark-color: #202020;
+  --secondary-dark-color: #353439;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html body {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  overflow-x: hidden;
+
+  .code-container {
+    @apply text-sm rounded-lg h-[600px] overflow-y-hidden px-3;
+
+    background-color: var(--secondary-dark-color);
+
+    .select-type-container {
+      @apply flex flex-wrap gap-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400;
+    }
+
+    .textarea {
+      @apply block p-2.5 text-sm text-gray-100 border-none w-full h-[500px] resize-none overflow-y-scroll;
+      background-color: transparent;
+
+      &:focus {
+        @apply outline-none;
+      }
+    }
+  }
+}

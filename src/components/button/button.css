@@ -1,0 +1,11 @@
+.btn-primary {
+  @apply text-gray-200 bg-blue-600 hover:bg-blue-700;
+}
+
+.btn-dark {
+  @apply text-gray-200 bg-gray-800 hover:bg-gray-900;
+}
+
+.btn-disabled {
+  @apply text-gray-200 bg-gray-300 hover:bg-gray-300 cursor-not-allowed;
+}

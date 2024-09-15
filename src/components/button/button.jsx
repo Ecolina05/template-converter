@@ -2,19 +2,20 @@ import classNames from 'classnames';
 
 import './button.css';
 
-const Button = ({ children, disabled, type, variant, onClick }) => {
+const Button = ({ className, children, disabled, type = 'button', variant, onClick }) => {
 	const classes = classNames('font-medium rounded-lg text-sm px-5 py-2.5', {
+		'btn-primary': variant === 'primary',
 		'btn-dark': variant === 'dark',
-		'btn-light': variant === 'light',
 		'btn-disabled': disabled,
+		[className]: className,
 	});
 
 	return (
 		<button
 			className={classes}
 			disabled={disabled}
-			type={type}
 			onClick={onClick}
+			type={type}
 		>
 			{children}
 		</button>
